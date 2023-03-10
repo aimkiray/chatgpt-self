@@ -1,4 +1,4 @@
-# ChatGPT-Vercel
+# ChatGPT-Self
 
 ![](assets/preview-light.png#gh-light-mode-only)
 ![](assets/preview-dark.png#gh-dark-mode-only)
@@ -7,17 +7,13 @@
 1. [aitoolgpt.com](www.aitoolgpt.com)，由 [@AUDI_GUZZ](https://m.okjike.com/users/4af3cfb4-1291-4a8b-b210-f515c86934a9) 免费提供。
 2. [chatsverse.xyz](www.chatsverse.xyz)，由 [@Airyland](https://m.okjike.com/users/C6C8DE3A-E89D-4978-9E7D-B2E167D835A9) 免费提供。
 
-API Key 由 [@AUDI_GUZZ](https://m.okjike.com/users/4af3cfb4-1291-4a8b-b210-f515c86934a9) 和 [@ourongxing](https://github.com/ourongxing) 免费提供
+API Key 由 [@AUDI_GUZZ](https://m.okjike.com/users/4af3cfb4-1291-4a8b-b210-f515c86934a9) 和 [@ourongxing](https://github.com/ourongxing) 免费提供。
 
 ## 部署一个你自己的（免费）
 
 > 本项目主要面向中文用户，所以用中文，原版是英文的。
 
-如果你只需要部署一个你自己用的网站，而不需要定制，那么你完全不需要在本地跑起来，你可以直接点击下面的按钮，然后按照提示操作即可。 vercel 域名已经被墙，但 vercel 本身没有被墙，所以你绑定自己的域名就可以了。
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/ourongxing/chatgpt-vercel)
-
-如果你需要部署给更多人用，那么你可能需要将上面创建的你自己的仓库 `git clone` 到本地。
+如果你想部署到自己的服务器，那么你可能需要 fork 到自己的仓库并 `git clone` 到本地。
 
 1. 将 `.env.example` 文件修改为 `.env`，然后在里面填入你的 [OpenAI API key](https://platform.openai.com/account/api-keys)。如果用户不填自己的 key，那么就会使用你的 key。
 
@@ -26,8 +22,7 @@ API Key 由 [@AUDI_GUZZ](https://m.okjike.com/users/4af3cfb4-1291-4a8b-b210-f515
     // 你可以填写多个，用 | 分隔，随机调用。最好是多填几个，不太清楚有没有并发上的限制。
     OPENAI_API_KEY=sk-xxx|sk-yyy
     ```
-    最新版本支持读取 Vercel 的环境变量，所以你也可以直接在 Vercel 上设置环境变量，如图所示。对于大部分人来说这个更方便。会在下次部署时生效。
-    ![](assets/environment.png)
+
 2. 默认设置在 `src/default.ts` 文件中，自行修改。默认的提示信息也在这里。
     ```ts
     const defaultSetting = {
@@ -55,7 +50,6 @@ API Key 由 [@AUDI_GUZZ](https://m.okjike.com/users/4af3cfb4-1291-4a8b-b210-f515
 
 如果你需要在本地开发和调试，有点麻烦
 1. 升级到 `node18`，要用到原生的 `fetch`。
-2. API 被墙了，自己想办法开代理，不然要报错。也可以直接 `vercel deploy` 部署到 vercel 开发环境上调试。
 3. `pnpm i` 安装依赖。
 4. `pnpm dev` 启动项目。
 
