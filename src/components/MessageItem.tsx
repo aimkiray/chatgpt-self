@@ -17,9 +17,9 @@ interface Props {
 export default ({ role, message }: Props) => {
   useCopyCode()
   const roleClass = {
-    system: "bg-gradient-to-r from-gray-300 via-gray-200 to-gray-300",
-    user: "bg-gradient-to-r from-sky-400 to-emerald-500",
-    assistant: "bg-gradient-to-r from-yellow-300 to-red-700 "
+    system: "border-t-gray-300",
+    user: "border-t-sky-300",
+    assistant: "border-t-rose-300"
   }
 
   const htmlString = () => {
@@ -47,14 +47,12 @@ export default ({ role, message }: Props) => {
 
   return (
     <div
-      class="flex py-2 gap-3 px-4 rounded-lg transition-colors md:hover:bg-slate/5 dark:md:hover:bg-slate/2 relative message-item"
+      class="my-2 px-4 rounded-lg transition-colors md:hover:bg-slate/5 dark:md:hover:bg-slate/2 relative message-item"
       // class:op-75={role === "user"}
     >
       <div
-        class={`shrink-0 w-7 h-7 mt-4 rounded-full op-80 ${roleClass[role]}`}
-      ></div>
-      <div
-        class="message prose prose-slate dark:prose-invert dark:text-slate break-words overflow-hidden"
+        class={`message prose prose-slate dark:prose-invert dark:text-slate break-words overflow-hidden border-t-2 ${roleClass[role]}`}
+        style="box-shadow: inset 0 2px 0 rgb(0 0 0 / 0.05);"
         innerHTML={htmlString()}
       />
       <Clipboard

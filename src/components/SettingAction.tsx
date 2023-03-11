@@ -60,7 +60,7 @@ export default function SettingAction(props: {
           />
         </SettingItem>
         <SettingItem
-          icon="i-carbon:save-image"
+          icon="i-carbon:save"
           label="记录对话内容，刷新不会消失"
         >
           <label class="relative inline-flex items-center cursor-pointer ml-1">
@@ -104,15 +104,10 @@ export default function SettingAction(props: {
           onClick={() => {
             setShown(!shown())
           }}
-          icon="i-carbon:settings"
+          icon="i-ri:settings-4-fill"
           label="设置"
         />
         <div class="flex">
-          <ActionItem
-            onClick={exportJpg}
-            icon="i-carbon:image"
-            label="导出图片"
-          />
           <ActionItem
             label="导出 Markdown"
             onClick={async () => {
@@ -121,17 +116,22 @@ export default function SettingAction(props: {
               setTimeout(() => setCopied(false), 1000)
             }}
             icon={
-              copied() ? "i-ri:check-fill text-yellow" : "i-ri:markdown-line"
+              copied() ? "i-ri:check-fill text-rose" : "i-ri:file-copy-2-fill"
             }
           />
           <ActionItem
+            onClick={exportJpg}
+            icon="i-ri:image-fill"
+            label="导出图片"
+          />
+          <ActionItem
             onClick={props.reAnswer}
-            icon="i-carbon:reset"
+            icon="i-ri:restart-fill"
             label="重新回答"
           />
           <ActionItem
             onClick={props.clear}
-            icon="i-carbon:trash-can"
+            icon="i-ri:delete-bin-2-fill"
             label="清空对话"
           />
         </div>
