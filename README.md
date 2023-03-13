@@ -1,7 +1,7 @@
 # ChatGPT Self-hosting
 
-![](assets/preview-light.png)
 ![](assets/preview-light-chat.png)
+![](assets/preview-dark-chat.png)
 
 
 ## 部署一个你自己的
