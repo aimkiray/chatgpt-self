@@ -107,7 +107,7 @@ export default function SettingAction(props: {
           icon="i-ri:settings-4-fill"
           label="设置"
         />
-        <div class="flex">
+        <div class="flex gap-x-1">
           <ActionItem
             label="导出 Markdown"
             onClick={async () => {
@@ -159,7 +159,7 @@ function SettingItem(props: {
 function ActionItem(props: { onClick: any; icon: string; label?: string }) {
   return (
     <div
-      class="flex items-center cursor-pointer mx-1 p-2 hover:bg-slate hover:bg-op-10 rounded text-1.2em"
+      class="flex items-center cursor-pointer p-2 hover:bg-slate hover:bg-op-10 rounded text-1.2em"
       onClick={props.onClick}
     >
       <button class={props.icon} title={props.label} />

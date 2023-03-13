@@ -47,7 +47,7 @@ export default ({ role, message }: Props) => {
 
   return (
     <div
-      class="my-2 px-4 rounded-lg transition-colors md:hover:bg-slate/5 dark:md:hover:bg-slate/2 relative message-item"
+      class="my-2 rounded-lg transition-colors md:hover:bg-slate/5 dark:md:hover:bg-slate/2 relative message-item"
       // class:op-75={role === "user"}
     >
       <div

@@ -5,9 +5,10 @@ import {
   ReconnectInterval
 } from "eventsource-parser"
 
-const localEnv = import.meta.env.OPENAI_API_KEY
+const apiKey = import.meta.env.API_KEY
+const baseUrl = (import.meta.env.API_URL || 'https://api.openai.com').trim().replace(/\/$/,'')
 
-const apiKeys = (localEnv.split(/\s*\|\s*/) ?? []).filter(
+const apiKeys = (apiKey.split(/\s*\|\s*/) ?? []).filter(
   Boolean
 )
 
@@ -29,7 +30,7 @@ export const post: APIRoute = async context => {
     return new Response("没有输入任何文字")
   }
 
-  const completion = await fetch("https://api.openai.com/v1/chat/completions", {
+  const completion = await fetch(`${baseUrl}/v1/chat/completions`, {
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${key}`
